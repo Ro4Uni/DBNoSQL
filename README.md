@@ -1,0 +1,1 @@
+no es la api más bonita que he hecho, no tampoco la mas funcional pero si la más complejas en temas de mantener los datos de sesion ;-;
