@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <h1 style="color: rgb(17, 94, 17)">Huellitas:</h1>
+    <h2 style="color: rgb(20, 160, 20)">El sistema de calificación de productos de y para mascotas</h2>
+    <p>Por favor complete sus datos de dueño</p>
+    <form action="{{ url_for('usuario.perfil', rol='dueno') }}" method="post">
+        <label for="correo">Correo de contacto:</label>
+        <input type="email" id="correo" name="correo" required><br><br>
+
+        <label for="telefono">Teléfono de contacto:</label>
+        <input type="text" id="telefono" name="telefono"><br><br>
+
+        <label for="fecha_nacimiento">Fecha de nacimiento</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"><br><br>
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad"><br><br>
+
+        <label for="calle">Calle:</label>
+        <input type="text" id="calle" name="calle" required><br><br>
+        <label for="comuna">Comuna:</label>
+        <input type="text" id="comuna" name="comuna" required><br><br>
+        <label for="region">Región:</label>
+        <input type="text" id="region" name="region" required><br><br>
+
+        <button type="submit">Guardar perfil</button>
+    </form>
+
+    <details>
+        <summary>Agregar mascota (puedes hacerlo después)</summary>
+        <form action="{{ url_for('mascota.create_mascota') }}" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+
+            <label for="tipoa">Tipo de animal</label>
+            <input type="text" id="tipoa" name="tipoa"><br><br>
+
+            <label for="raza">Raza:</label>
+            <input type="text" id="raza" name="raza"><br><br>
+
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad"><br><br>
+
+            <label for="condicion">Condición médica:</label>
+            <input type="text" id="condicion" name="condicion"><br><br>
+            
+            <label for="procedimiento">Ultimo procedimiento medico:</label>
+            <div>
+                <label for="tipop">Tipo de procedimiento:</label>
+                <input type="text" id="tipop" name="tipop"><br><br>
+                <label for="descripcion">Descripción:</label>
+                <input type="text" id="descripcion" name="descripcion"><br><br>
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha"><br><br>
+            </div>
+            
+            <button type="submit">Guardar mascota</button>
+        </form>
+    </details>
+</body>
+</html>

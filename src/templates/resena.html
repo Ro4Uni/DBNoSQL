@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <h1 style="color: rgb(17, 94, 17)">Huellitas:</h1>
+    <h2 style="color: rgb(20, 160, 20)">El sistema de calificación de productos de y para mascotas</h2>
+    <p>Portal de reseñas.</p>
+
+    {% if rol == 'dueno' %}
+    <h3>Acciones disponibles para dueños</h3>
+    <details>
+    <summary>Crear productos</summary>    
+    <form action="{{ url_for('calificar.create_productos') }}" method="post">
+        <label>Nombre del producto</label>
+        <input type="text" name="nombre" required><br>
+        <label>Categoría</label>
+        <input type="text" name="categoria"><br>
+        <label>Precio</label>
+        <input type="text" name="precio"><br>
+        <label>Tipo de animal</label>
+        <input type="text" name="tipo_animal"><br>
+        <button type="submit">Crear producto</button>
+    </form>
+    </details>
+    <details>
+        <summary>Escribir una reseña</summary>
+        <form action="{{ url_for('calificar.create_resena') }}" method="post">
+            <label>Calificación</label>
+            <input type="number" name="calificacion" min="1" max="5" required><br>
+            <label>Descripción</label>
+            <textarea name="descripcion"></textarea><br>
+            <button type="submit">Escribir reseña</button>
+        </form>
+    </details>
+    {% else %}
+    <p>Solo los dueños pueden crear productos o reseñas.</p>
+    {% endif %}
+
+    <form action="{{ url_for('calificar.get_productos') }}" method="get">
+        <button type="submit">Ver listado de productos</button>
+    </form>
+
+    {% if productos %}
+    <h3>Listado de productos</h3>
+    <ul>
+        {% for producto in productos %}
+        <li>{{ producto.nombre }} - {{ producto.categoria }} - {{ producto.precio }} - {{ producto.tipo_animal }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No hay productos registrados todavía.</p>
+    {% endif %}
+</body>
+</html>

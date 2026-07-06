@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <h1 style="color: rgb(17, 94, 17)">Bienvenido a huellitas:</h1>
+    <h2 style="color: rgb(20, 160, 20)">El sistema de calificación de productos de y para mascotas</h2>
+    <p>Por favor ingrese sus datos para registrarse</p>
+    <form id="registroForm" action="{{ url_for('usuario.create_usuario') }}" method="post">
+        <label for="rut">RUT (sin dígito verificador):</label>
+        <input type="text" id="rut" name="rut" required><br><br>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"><br><br>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido"><br><br>
+
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <h1 style="color: rgb(17, 94, 17)">Huellitas:</h1>
+    <h2 style="color: rgb(20, 160, 20)">El sistema de calificación de productos de y para mascotas</h2>
+    <p>Por favor elija su rol en la aplicación</p>
+    <form action="{{ url_for('usuario.seleccionar_rol') }}" method="post">
+        <button type="submit" name="rol" value="dueno">Dueño</button>
+        <button type="submit" name="rol" value="veterinaria">Veterinaria</button>
+        <button type="submit" name="rol" value="comercio">Comercio</button>
+    </form>
+</body>
+</html>

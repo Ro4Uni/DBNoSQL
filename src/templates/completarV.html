@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <h1 style="color: rgb(17, 94, 17)">Huellitas:</h1>
+    <h2 style="color: rgb(20, 160, 20)">El sistema de calificación de productos de y para mascotas</h2>
+    <p>Por favor complete los datos de la clínica veterinaria</p>
+    <form action="{{ url_for('usuario.perfil', rol='veterinaria') }}" method="post">
+        <label for="rut_recinto">Rut del establecimiento</label>
+        <input type="text" id="rut_recinto" name="rut_recinto"><br><br>
+
+        <label for="nombre_recinto">Nombre del establecimiento:</label>
+        <input type="text" id="nombre_recinto" name="nombre_recinto"><br><br>
+
+        <label for="especialidad">Especialidad:</label>
+        <input type="text" id="especialidad" name="especialidad"><br><br>
+
+        <label for="calle">Calle:</label>
+        <input type="text" id="calle" name="calle" required><br><br>
+        <label for="comuna">Comuna:</label>
+        <input type="text" id="comuna" name="comuna" required><br><br>
+        <label for="region">Región:</label>
+        <input type="text" id="region" name="region" required><br><br>
+
+        <label for="contacto">Contacto:</label>
+        <div>
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" name="telefono"><br><br>
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" name="correo"><br><br>
+        </div>
+
+        <label for="tiempo_actividad">Tiempo de actividad (en años):</label>
+        <input type="text" id="tiempo_actividad" name="tiempo_actividad"><br><br>
+
+        <button type="submit">Terminar</button>
+    </form>
+</body>
+</html>
